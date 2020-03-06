@@ -14,8 +14,7 @@ const App = () => {
   }, []);
 
   const setRecipes = async () => {
-   const response = await fetchRecipes().then(response => response).then(data => data);
-   //console.log("inside set recipes",response)
+   const response = await fetchRecipes();
     setMeals(response.meals);
     setSelectedMeal(null);
     OnRecipeSelect(response.meals[0]);
