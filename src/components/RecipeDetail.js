@@ -1,5 +1,6 @@
 import React from "react";
 
+
 const RecipeDetail = props => {
   if (props.meal == null) return <div>Loading...</div>;
    var ingredients = [];
@@ -18,6 +19,7 @@ const RecipeDetail = props => {
   console.log(ingredients);
 
   return (
+    <div>
     <div class="ui inverted segment">
     <img class="ui centered medium rounded image" src={props.meal.strMealThumb}/>
     <div class="content">
@@ -41,6 +43,8 @@ const RecipeDetail = props => {
     <h2 class="header">Instructions</h2>
     <div class="description">{props.meal.strInstructions}</div>
     </div>
+   </div>
+   
    </div>
   );
 };
