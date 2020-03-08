@@ -1,9 +1,9 @@
 import axios from 'axios';
-import {BASE_URL} from '../environment';
+import {BASE_URL} from '../shared/environment';
 
  export const fetchRecipes = async () =>
   {
-    const url = BASE_URL+"?a=Canadian";
+    const url = BASE_URL+"filter.php?a=Canadian";
     const promise = new Promise((resolve, reject) => {
         axios.get(url).then((response) => {
                   resolve(response.data);
@@ -20,8 +20,7 @@ import {BASE_URL} from '../environment';
    
  export const fetchRecipe =  async (id) =>
   {
-    
-    const url=`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`;
+    const url=BASE_URL+"lookup.php?i="+`${id}`;
     const promise = new Promise((resolve, reject) => {
         axios.get(url).then((response) => {
                   resolve(response.data);
