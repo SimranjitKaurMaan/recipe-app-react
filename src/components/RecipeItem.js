@@ -9,7 +9,7 @@ const RecipeItem = props => {
   console.log(context)
   return (
     
-    <div onClick={() => { context.OnRecipeSelect(props.meal)}} className="item recipe-item">
+    <div onClick={() => { context.OnRecipeSelect(props.meal)}} className="item recipe-item" >
       <img
         className="ui rounded image"
         src={ props.meal.strMealThumb}

@@ -25,7 +25,7 @@ const App = () => {
     console.log("from app",meal)
     const response = await fetchRecipe(meal.idMeal);
     const mealDetails = response.meals[0];
-    console.log(mealDetails);
+    console.log("meal details",mealDetails);
     setSelectedMeal(mealDetails);
     setModalOpen(true);
   };
