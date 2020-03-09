@@ -21,11 +21,11 @@ const Modal = props => {
           (props.show ? "active" : "hidden")
         }
       >
-        <div class="image content">
-          <img class="ui image medium" src={props.meal.strMealThumb} />
+        <div className="image content">
+          <img className="ui image medium" src={props.meal.strMealThumb} />
         </div>
         <div className="header">{props.meal.strMeal}</div>
-        <div class="header">Instructions</div>
+        <div className="header">Instructions</div>
         <div className="content">{props.meal.strInstructions}</div>
       </div>
     </div>,
