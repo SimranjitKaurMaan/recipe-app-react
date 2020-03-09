@@ -9,6 +9,7 @@ const App = () => {
   const [meals, setMeals] = useState([]);
   const [selectedMeal, setSelectedMeal] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
+  
   useEffect(() => {
     setRecipes();
   }, []);
