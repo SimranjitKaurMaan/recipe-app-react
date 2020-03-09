@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import RecipeList from "./RecipeList";
 import RecipeDetail from "./RecipeDetail";
-import Modal from "../shared/Modal";
+import Modal from "./RecipeDetailModal";
 import { fetchRecipes, fetchRecipe } from "../services/apis";
 import RecipeContext from "../contexts/RecipeContext";
 
@@ -9,7 +9,7 @@ const App = () => {
   const [meals, setMeals] = useState([]);
   const [selectedMeal, setSelectedMeal] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
-  
+
   useEffect(() => {
     setRecipes();
   }, []);
