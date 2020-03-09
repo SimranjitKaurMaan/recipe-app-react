@@ -25,7 +25,7 @@ const Modal = props => {
           <img class="ui image medium" src={props.meal.strMealThumb} />
         </div>
         <div className="header">{props.meal.strMeal}</div>
-        <h4 class="header">Instructions</h4>
+        <div class="header">Instructions</div>
         <div className="content">{props.meal.strInstructions}</div>
       </div>
     </div>,
