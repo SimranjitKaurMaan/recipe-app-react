@@ -4,6 +4,8 @@ import ReactDOM from "react-dom";
 const Modal = props => {
   if (props.meal == null) return <div>Loading...</div>;
 
+  console.log(props.meal)
+
   return ReactDOM.createPortal(
     <div
       onClick={() => {
