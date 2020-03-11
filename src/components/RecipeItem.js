@@ -13,6 +13,7 @@ const RecipeItem = props => {
       <img
         className="ui rounded image"
         src={ props.meal.strMealThumb}
+        alt=""
        />
       <div className="content">
         <div className="header">{props.meal.strMeal}</div>

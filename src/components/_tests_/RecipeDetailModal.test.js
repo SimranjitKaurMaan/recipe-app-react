@@ -1,8 +1,6 @@
 import React from 'react';
-import { mount , shallow,configure} from 'enzyme';
-import ReactDOM from 'react-dom';
+import { mount , configure} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import App from '../App';
 import RecipeDetailModal from '../RecipeDetailModal';
 
 

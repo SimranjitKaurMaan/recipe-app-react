@@ -5,7 +5,7 @@ import {RecipeContext} from "../contexts/RecipeContext";
 
 const RecipeList = () => {
   const context = useContext(RecipeContext);
-  if(context.meals.length == 0)
+  if(context.meals.length === 0)
     {
       context.setRecipes();
     }
