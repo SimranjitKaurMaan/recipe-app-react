@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import RecipeItem from "./RecipeItem";
 import "./RecipeList.css";
+import {RecipeContext} from "../contexts/RecipeContext";
 
-const RecipeList = props => {
-  const renderedList = props.meals.map(meal => {
+const RecipeList = () => {
+  const context = useContext(RecipeContext);
+  if(context.meals.length == 0)
+    {
+      context.setRecipes();
+    }
+
+  const renderedList = context.meals.map(meal => {
     return <RecipeItem meal={meal} key={meal.idMeal}/>;
   });
 
