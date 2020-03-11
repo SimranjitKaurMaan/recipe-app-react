@@ -7,12 +7,13 @@ const Modal = () => {
 
   if (context.selectedMeal == null) return <div>Loading...</div>;
 
-  console.log(context.selectedMeal)
+  // console.log(context.selectedMeal)
 
+ 
   return ReactDOM.createPortal(
     <div
       onClick={() => {
-        context.OnDismissModal();
+        context.setModalOpen(false);
       }}
       className={
         "ui page modals dimmer top aligned visible " +
