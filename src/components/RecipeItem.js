@@ -1,15 +1,25 @@
-import React, {useContext} from "react";
+import React, {useContext, useState} from "react";
 import './RecipeItem.css';
 import {RecipeContext} from "../contexts/RecipeContext";
+import { fetchRecipe} from "../services/apis";
 
 
-const RecipeItem = props => {
+
+const RecipeItem = props => 
+{
   const context = useContext(RecipeContext);
-  console.log("inside recipe item",props.meal)
-  console.log(context)
+  
+  const OnRecipeSelect = async meal => 
+  {
+    const response = await fetchRecipe(meal.idMeal);
+    const mealDetails = response.meals[0];
+    context.setSelectedMeal(mealDetails);
+    context.setModalOpen(true);
+  };
+
   return (
     
-    <div onClick={() => { context.OnRecipeSelect(props.meal)}} className="item recipe-item" >
+    <div onClick={() => { OnRecipeSelect(props.meal) }} className="item recipe-item" >
       <img
         className="ui rounded image"
         src={ props.meal.strMealThumb}
