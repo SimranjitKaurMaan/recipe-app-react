@@ -1,34 +1,37 @@
-import React from "react";
+import React,{useContext} from "react";
 import ReactDOM from "react-dom";
+import {RecipeContext} from "../contexts/RecipeContext";
 
-const Modal = props => {
-  if (props.meal == null) return <div>Loading...</div>;
+const Modal = () => {
+  const context = useContext(RecipeContext);
 
-  console.log(props.meal)
+  if (context.selectedMeal == null) return <div>Loading...</div>;
+
+  console.log(context.selectedMeal)
 
   return ReactDOM.createPortal(
     <div
       onClick={() => {
-        props.onDismiss();
+        context.OnDismissModal();
       }}
       className={
         "ui page modals dimmer top aligned visible " +
-        (props.show ? "active" : "hidden")
+        (context.modalOpen ? "active" : "hidden")
       }
     >
       <div
         onClick={e => e.stopPropagation()}
         className={
           "ui special modal transition visible " +
-          (props.show ? "active" : "hidden")
+          (context.modalOpen ? "active" : "hidden")
         }
       >
         <div className="image content">
-          <img className="ui image medium" src={props.meal.strMealThumb} />
+          <img className="ui image medium" src={context.selectedMeal.strMealThumb} />
         </div>
-        <div className="header">{props.meal.strMeal}</div>
+        <div className="header">{context.selectedMeal.strMeal}</div>
         <div className="header">Instructions</div>
-        <div className="content">{props.meal.strInstructions}</div>
+        <div className="content">{context.selectedMeal.strInstructions}</div>
       </div>
     </div>,
     document.querySelector("#modal")
