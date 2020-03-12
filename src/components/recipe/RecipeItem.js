@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
-import './RecipeItem.css';
-import {RecipeContext} from "../contexts/RecipeContext";
-import { fetchRecipe} from "../services/apis";
+import './styles/RecipeItem.css';
+import {RecipeContext} from "../../contexts/RecipeContext";
+import { fetchRecipe} from "../../services/apis";
 
 const RecipeItem = props => 
 {
