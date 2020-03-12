@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import RecipeItem from "./RecipeItem";
-import "./styles/RecipeList.css";
 import {RecipeContext} from "../../contexts/RecipeContext";
 
 const RecipeList = () => {
