@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import RecipeItem from "./RecipeItem";
-import "./RecipeList.css";
-import {RecipeContext} from "../contexts/RecipeContext";
+import "./styles/RecipeList.css";
+import {RecipeContext} from "../../contexts/RecipeContext";
 
 const RecipeList = () => {
   const context = useContext(RecipeContext);

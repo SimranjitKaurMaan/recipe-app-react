@@ -1,6 +1,6 @@
 import React,{useContext} from "react";
 import ReactDOM from "react-dom";
-import {RecipeContext} from "../contexts/RecipeContext";
+import {RecipeContext} from "../../contexts/RecipeContext";
 
 const Modal = () => {
   const context = useContext(RecipeContext);

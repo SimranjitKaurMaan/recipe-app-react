@@ -1,6 +1,6 @@
 import React from "react";
 
-import RecipeApp from './RecipeApp';
+import RecipeApp from './components/recipe/RecipeApp';
 
 const App = () => {
   
