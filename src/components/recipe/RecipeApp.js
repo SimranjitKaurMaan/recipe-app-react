@@ -9,7 +9,7 @@ const RecipeApp = () => {
     <div>
       <RecipeContextProvider>
         <RecipeList/>
-        <RecipeModal />
+        <RecipeModal/>
       </RecipeContextProvider>
     </div>
   );

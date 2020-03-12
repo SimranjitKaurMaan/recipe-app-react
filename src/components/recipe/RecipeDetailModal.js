@@ -1,30 +1,28 @@
 import React,{useContext} from "react";
+import { useHistory } from "react-router-dom";
 import ReactDOM from "react-dom";
 import {RecipeContext} from "../../contexts/RecipeContext";
 
 const Modal = () => {
   const context = useContext(RecipeContext);
+  const history = useHistory();
 
   if (context.selectedMeal == null) return <div>Loading...</div>;
 
-  // console.log(context.selectedMeal)
-
- 
   return ReactDOM.createPortal(
     <div
       onClick={() => {
-        context.setModalOpen(false);
+        context.setSelectedMeal(null);
+        history.push("/recipes");
       }}
       className={
-        "ui page modals dimmer top aligned visible " +
-        (context.modalOpen ? "active" : "hidden")
+        "ui page modals dimmer top aligned visible active"
       }
     >
       <div
         onClick={e => e.stopPropagation()}
         className={
-          "ui special modal transition visible " +
-          (context.modalOpen ? "active" : "hidden")
+          "ui special modal transition visible active "
         }
       >
         <div className="image content">

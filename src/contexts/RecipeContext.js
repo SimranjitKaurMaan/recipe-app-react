@@ -6,7 +6,6 @@ export const RecipeContext = createContext();
 export const RecipeContextProvider = props => {
   const [meals, setMeals] = useState([]);
   const [selectedMeal, setSelectedMeal] = useState(null);
-  const [modalOpen, setModalOpen] = useState(false);
 
   const setRecipes = async () => {
     const response = await fetchRecipes();
@@ -18,11 +17,9 @@ export const RecipeContextProvider = props => {
     <RecipeContext.Provider
       value={{
         meals,
-        setRecipes,
+        setRecipes, 
         selectedMeal,
-        setSelectedMeal,
-        modalOpen,
-        setModalOpen
+        setSelectedMeal
       }}
     >
       {props.children}
