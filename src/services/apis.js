@@ -20,7 +20,7 @@ import {BASE_URL} from '../environment';
    
  export const fetchRecipe =  async (id) =>
   {
-    const url=BASE_URL+"lookup.php?i="+`${id}`;
+    const url=BASE_URL+"lookup.php?i="+id;
     const promise = new Promise((resolve, reject) => {
         axios.get(url).then((response) => {
                   resolve(response.data);

@@ -1,9 +1,7 @@
-import React, {useContext, useState} from "react";
+import React, {useContext} from "react";
 import './styles/RecipeItem.css';
 import {RecipeContext} from "../../contexts/RecipeContext";
 import { fetchRecipe} from "../../services/apis";
-
-
 
 const RecipeItem = props => 
 {
@@ -23,6 +21,7 @@ const RecipeItem = props =>
       <img
         className="ui rounded image"
         src={ props.meal.strMealThumb}
+        alt=""
        />
       <div className="content">
         <div className="header">{props.meal.strMeal}</div>

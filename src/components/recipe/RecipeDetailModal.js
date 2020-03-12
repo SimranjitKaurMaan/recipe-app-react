@@ -28,7 +28,7 @@ const Modal = () => {
         }
       >
         <div className="image content">
-          <img className="ui image medium" src={context.selectedMeal.strMealThumb} />
+          <img className="ui image medium" src={context.selectedMeal.strMealThumb} alt="" />
         </div>
         <div className="header">{context.selectedMeal.strMeal}</div>
         <div className="header">Instructions</div>
