@@ -2,16 +2,15 @@ import React,{useContext,useState, useEffect,useFetch} from "react";
 import history from '../../history';
 import ReactDOM from "react-dom";
 import {RecipeContext} from "../../contexts/RecipeContext";
-import { fetchRecipe} from "../../services/apis";
+import { fetchRecipe, fetchRecipes} from "../../services/apis";
 
 const Modal = (props) => {
 
-  console.log("inside recipe modal");
   const mealId = props.match.params.id;
-  const [selectedMeal, setSelectedMeal] = useState(null);
+  const [selectedMeal, setSelectedMeal] = useState('');
   
 
-  const fetchData = async (mealId) =>
+  const getRecipe = async (mealId) =>
     {
       const response = await fetchRecipe(mealId);
       const mealDetails = response.meals[0];
@@ -20,9 +19,8 @@ const Modal = (props) => {
     }
 
   useEffect(() => {
-    console.log("use effect");
-    fetchData(mealId);
-  });
+    getRecipe(mealId);
+  },[]);
 
   return ReactDOM.createPortal(
     <div
