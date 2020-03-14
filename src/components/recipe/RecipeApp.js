@@ -1,6 +1,6 @@
 import React from "react";
 import RecipeList from "./RecipeList";
-import RecipeModal from "./RecipeDetailModal";
+import RecipeModal from "./Modal";
 import {RecipeContextProvider } from "../../contexts/RecipeContext";
 
 const RecipeApp = () => {
@@ -9,7 +9,6 @@ const RecipeApp = () => {
     <div>
       <RecipeContextProvider>
         <RecipeList/>
-        <RecipeModal/>
       </RecipeContextProvider>
     </div>
   );

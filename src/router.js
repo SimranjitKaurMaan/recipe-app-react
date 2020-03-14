@@ -1,7 +1,7 @@
 import React from "react";
 import { Router, Switch, Route, Redirect } from "react-router-dom";
 import App from "./App";
-import RecipeDetailModal from './components/recipe/RecipeDetailModal';
+import Modal from './components/recipe/Modal';
 import history from './history';
 
 const Routes = () => {
@@ -9,9 +9,8 @@ const Routes = () => {
     <Router history={history}>
       <Switch>
         <Redirect exact from="/" to="recipes" />
+        <Route  path="/recipes/:id" component={Modal}/>
         <Route  path="/recipes" component={App} />
-        <Route  path="/recipes/:id" component={RecipeDetailModal}/>
-       
       </Switch>
     </Router>
   );
