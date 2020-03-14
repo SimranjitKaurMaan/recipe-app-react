@@ -1,10 +1,15 @@
 import React from "react";
 import { Router, Switch, Route, Redirect } from "react-router-dom";
+import { createBrowserHistory } from 'history'; 
 import App from "./App";
 import Modal from './components/recipe/Modal';
-import history from './history';
+
 
 const Routes = () => {
+
+   
+ const history =  createBrowserHistory();
+
   return (
     <Router history={history}>
       <Switch>

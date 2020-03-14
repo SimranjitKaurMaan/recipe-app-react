@@ -1,8 +1,6 @@
-import React,{useContext,useState, useEffect,useFetch} from "react";
-import history from '../../history';
+import React,{useState, useEffect} from "react";
 import ReactDOM from "react-dom";
-import {RecipeContext} from "../../contexts/RecipeContext";
-import { fetchRecipe, fetchRecipes} from "../../services/apis";
+import { fetchRecipe} from "../../services/apis";
 
 const Modal = (props) => {
 
