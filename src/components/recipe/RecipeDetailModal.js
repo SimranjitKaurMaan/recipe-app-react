@@ -1,20 +1,20 @@
 import React,{useContext} from "react";
-import { useHistory } from "react-router-dom";
+import history from '../../history';
 import ReactDOM from "react-dom";
 import {RecipeContext} from "../../contexts/RecipeContext";
 
 const Modal = () => {
   const context = useContext(RecipeContext);
-  const history = useHistory();
-
-  if (context.selectedMeal == null) return <div>Loading...</div>;
+  
+  if (context.selectedMeal == null) return null;
 
   return ReactDOM.createPortal(
     <div
       onClick={() => {
         context.setSelectedMeal(null);
-        history.push("/recipes");
-      }}
+        history.push("/recipes"); 
+      }
+    }
       className={
         "ui page modals dimmer top aligned visible active"
       }

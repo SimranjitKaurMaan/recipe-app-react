@@ -1,14 +1,13 @@
 import React, {useContext} from "react";
-import { useHistory } from "react-router-dom";
 import './styles/RecipeItem.css';
 import {RecipeContext} from "../../contexts/RecipeContext";
 import { fetchRecipe} from "../../services/apis";
+import history from '../../history';
 
 const RecipeItem = props => 
 {
   const context = useContext(RecipeContext);
-  const history = useHistory();
-
+  
   const OnRecipeSelect = async meal => 
   {
     const response = await fetchRecipe(meal.idMeal);

@@ -1,20 +1,20 @@
 import React from "react";
-import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import { Router, Switch, Route, Redirect } from "react-router-dom";
 import App from "./App";
 import RecipeDetailModal from './components/recipe/RecipeDetailModal';
+import history from './history';
 
-const Router = () => {
+const Routes = () => {
   return (
-    <BrowserRouter>
+    <Router history={history}>
       <Switch>
         <Redirect exact from="/" to="recipes" />
-       
         <Route  path="/recipes" component={App} />
         <Route  path="/recipes/:id" component={RecipeDetailModal}/>
        
       </Switch>
-    </BrowserRouter>
+    </Router>
   );
 };
 
-export default Router;
+export default Routes;
